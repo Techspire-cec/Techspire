@@ -1,5 +1,6 @@
 import { useState } from "react";
 import lead1 from "../assets/Images/lead.png";
+import dev1 from "../assets/Images/logo.png";
 import { FaLinkedin } from "react-icons/fa";
 import SlideOnScroll from "../components/ScrollOnScroll";
 export default function TeamPage() {
@@ -11,8 +12,39 @@ export default function TeamPage() {
         role: "Chairman",
         image: lead1,
       },
+      members: [
+        {
+          name: "Harshit Jaiswal",
+          role: "Web Developer",
+          image: dev1,
+        },
+        {
+          name: "Sonam Singh",
+          role: "Web Developer",
+          image: dev1,
+        },
+      ],
     },
-    2026: {},
+    2026: {
+      lead: {
+        name: "Bias Bhadra",
+        role: "Chairman",
+        image: lead1,
+      },
+      members: [
+        {
+          name: "Harshit Jaiswal",
+          role: "Web Developer",
+          image: dev1,
+        },
+        {
+          name: "Sonam Singh",
+          role: "Web Developer",
+          image: dev1,
+        },
+      ],
+    },
+    // 2027: {},  By this You can Increase the Year Section
   };
   const currentTeam = teamData[activeYear];
   return (
@@ -70,6 +102,30 @@ export default function TeamPage() {
             </div>
           </div>
         </SlideOnScroll>
+        <h2 className="text-2xl font-bold mb-6 text-center">
+          Web Team {activeYear}
+        </h2>
+        <div className="flex justify-center gap-10 flex-wrap">
+          {currentTeam.members.map((member, index) => (
+            <div
+              key={index}
+              className="bg-gray-800 rounded-xl p-4 text-center shadow-md hover:scale-105 transition w-60 "
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-24 h-24 mx-auto rounded-full object-cover mb-3 border-2 border-green-400"
+              />
+              <h3 className="font-semibold">{member.name}</h3>
+              <p className="text-sm text-gray-400">{member.role}</p>
+              <div className="flex justify-center mt-0.5 hover:text-sky-400 hover:scale-120 transition">
+                <a href="#">
+                  <FaLinkedin />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
