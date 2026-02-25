@@ -140,7 +140,7 @@ export default function Resources() {
 
             {submitted && (
               <div className="text-center mt-4 text-green-400 font-semibold">
-                ✔ Request Sent Successfully!
+                Request Sent Successfully!
               </div>
             )}
           </div>
